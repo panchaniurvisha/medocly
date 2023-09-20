@@ -9,4 +9,5 @@ class AppColors {
   static const Color lightBlack = Color(0xff424242);
   static const Color unActiveIconColor = Color(0xff9E9E9E);
   static const Color hintTextColor = Color(0xff878585);
+  static const Color inActiveDotsColor = Color(0xffE0E0E0);
 }

@@ -1,4 +1,7 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:medocly/res/common/app_card.dart';
+import 'package:medocly/res/common/app_dentist_doctor_list.dart';
 import 'package:medocly/res/common/app_expanded_colum.dart';
 import 'package:medocly/res/common/app_search_bar.dart';
 import 'package:medocly/res/common/media_query.dart';
@@ -15,15 +18,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // List<Widget> pages = [
-  //   AppCard(),
-  //   AppCard(),
-  //   AppCard(),
-  //   AppCard(),
-  //   AppCard(),
-  // ];
+  List<Widget> pages = [
+    const AppCard(),
+    const AppCard(),
+    const AppCard(),
+    const AppCard(),
+    const AppCard(),
+  ];
   int selectedIndex = 0;
   final List<String> data = ["All", "General", "Dentist", "Nutritionist"];
+  final CarouselController carouselController = CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
             bottomRight: Radius.circular(width(context) / 40),
           ),
         ),
+        toolbarHeight: height(context) / 10,
         backgroundColor: AppColors.skuBlue,
         leading: Padding(
           padding: EdgeInsets.all(width(context) / 50),
@@ -69,36 +74,59 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const AppSearchBar(),
-              // SizedBox(
-              //   height: height(context) / 5,
-              //   child: CarouselSlider(
-              //     items: pages,
-              //     options: CarouselOptions(
-              //       viewportFraction: 1.0,
-              //       enableInfiniteScroll: false,
-              //       autoPlay: false,
-              //     ),
-              //   ),
-              // ),
+              Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  CarouselSlider(
+                    carouselController: carouselController,
+                    items: pages,
+                    options: CarouselOptions(
+                        viewportFraction: height(context) / 0.5,
+                        enableInfiniteScroll: false,
+                        autoPlay: false,
+                        onPageChanged: (index, reason) {
+                          setState(
+                            () {
+                              selectedIndex = index;
+                            },
+                          );
+                        }),
+                  ),
+                  Positioned(
+                    top: height(context) / 6,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        pages.length,
+                        (index) => Container(
+                          width: selectedIndex == index
+                              ? width(context) / 16
+                              : width(context) / 60,
+                          //double.infinity, // Adjust the size of the dots
+                          height: height(context) / 120,
+                          margin: EdgeInsets.symmetric(
+                              horizontal: width(context) / 100),
+                          decoration: BoxDecoration(
+                              borderRadius: selectedIndex == index
+                                  ? BorderRadius.circular(width(context) / 10)
+                                  : BorderRadius.circular(width(context) / 20),
+                              color: selectedIndex == index
+                                  ? Colors.white
+                                  : AppColors.inActiveDotsColor),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               Padding(
-                padding: EdgeInsets.symmetric(vertical: height(context) / 40),
-                child: Row(
-                  children: [
-                    Text(
-                      AppString.medClyService,
-                      style: TextStyle(
-                          color: AppColors.black,
-                          fontSize: height(context) / 40,
-                          fontWeight: FontWeight.w700),
-                    ),
-                    SizedBox(
-                      width: width(context) / 20,
-                    ),
-                    Image.asset(
-                      AppImages.hospitals,
-                      height: height(context) / 30,
-                    ),
-                  ],
+                padding: EdgeInsets.symmetric(vertical: height(context) / 90),
+                child: Text(
+                  AppString.medClyService,
+                  style: TextStyle(
+                      color: AppColors.black,
+                      fontSize: height(context) / 40,
+                      fontWeight: FontWeight.w700),
                 ),
               ),
               const Row(
@@ -130,12 +158,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: height(context) / 40,
                           fontWeight: FontWeight.w700),
                     ),
-                    Text(
-                      AppString.seeAll,
-                      style: TextStyle(
-                          color: AppColors.skuBlue,
-                          fontSize: height(context) / 50,
-                          fontWeight: FontWeight.w700),
+                    InkWell(
+                      child: Text(
+                        AppString.seeAll,
+                        style: TextStyle(
+                            color: AppColors.skuBlue,
+                            fontSize: height(context) / 50,
+                            fontWeight: FontWeight.w700),
+                      ),
+                      onTap: () => Navigator.pushNamed(
+                          context, RoutesName.searchDoctorByName),
                     ),
                   ],
                 ),
@@ -258,131 +290,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: height(context) / 40),
-                child: Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(AppImages.mohanSharma,
-                            height: height(context) / 8),
-                        SizedBox(height: height(context) / 60),
-                        Text(
-                          AppString.consulTation,
-                          style: TextStyle(
-                              color: AppColors.lightBlack,
-                              fontWeight: FontWeight.w500,
-                              fontSize: height(context) / 60),
-                        ),
-                        Text(
-                          AppString.rs500,
-                          style: TextStyle(
-                              color: AppColors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: height(context) / 60),
-                        )
-                      ],
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: width(context) / 60),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                AppString.drMohanSharma,
-                                style: TextStyle(
-                                    height: 3,
-                                    color: AppColors.black,
-                                    fontSize: height(context) / 45,
-                                    fontWeight: FontWeight.w700),
-                              ),
-                              SizedBox(
-                                width: width(context) / 10,
-                              ),
-                              Image.asset(
-                                AppImages.heart,
-                                color: AppColors.skuBlue,
-                                height: height(context) / 40,
-                              ),
-                            ],
-                          ),
-                          Text(
-                            AppString.cardiologists,
-                            style: TextStyle(
-                                height: 2,
-                                color: AppColors.lightBlack,
-                                fontSize: height(context) / 60,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          Row(
-                            children: [
-                              Image.asset(
-                                AppImages.star,
-                                height: height(context) / 50,
-                              ),
-                              SizedBox(width: width(context) / 60),
-                              Text(
-                                AppString.fourPointEight,
-                                style: TextStyle(
-                                    height: 2,
-                                    color: AppColors.lightBlack,
-                                    fontSize: height(context) / 60,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Image.asset(AppImages.ticketStar,
-                                  height: height(context) / 50),
-                              SizedBox(width: width(context) / 60),
-                              Text(
-                                AppString.year,
-                                style: TextStyle(
-                                    color: AppColors.lightBlack,
-                                    fontSize: height(context) / 60,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              SizedBox(width: width(context) / 40),
-                              Image.asset(AppImages.shieldDone,
-                                  height: height(context) / 50),
-                              SizedBox(width: width(context) / 60),
-                              Text(
-                                AppString.language,
-                                style: TextStyle(
-                                    color: AppColors.lightBlack,
-                                    fontSize: height(context) / 60,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ],
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: AppColors.skuBlue,
-                              fixedSize: Size(
-                                  width(context) / 1.7, height(context) / 20),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(
-                                      width(context) / 10)),
-                            ),
-                            child: Text(
-                              AppString.bookVisit,
-                              style: TextStyle(
-                                  color: AppColors.white,
-                                  fontSize: height(context) / 55,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              const AppDentistDoctorList(),
             ],
           ),
         ),

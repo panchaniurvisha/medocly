@@ -6,6 +6,6 @@ import 'package:medocly/view/search_doctor_by_name.dart';
 
 Map<String, WidgetBuilder> appRoutes = {
   RoutesName.bottomScreen: (context) => const BottomScreen(),
-  RoutesName.bottomScreen: (context) => const FindDoctorsScreen(),
+  RoutesName.findDoctorScreen: (context) => const FindDoctorsScreen(),
   RoutesName.searchDoctorByName: (context) => const SearchDoctorByName(),
 };

@@ -23,6 +23,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         //home: const BottomScreen(),
         routes: appRoutes,
-        initialRoute: RoutesName.searchDoctorByName);
+        initialRoute: RoutesName.bottomScreen);
   }
 }

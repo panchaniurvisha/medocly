@@ -33,4 +33,11 @@ class AppString {
   ///Find Doctors Screen
   static const String titleOfAppBar = "Find Doctors";
   static const String hintOfSearch = "Search doctor by name";
+
+  ///search Doctor by Name
+  static const String notFound = "Not Found";
+  static const String zeroFound = "0 found";
+  static const String fourSixNineFound = "469 founds";
+  static const String text =
+      "Sorry, the keyword you entered cannot be \n found, please check again or search with \n another keyword.";
 }
