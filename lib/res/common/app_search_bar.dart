@@ -14,6 +14,7 @@ class AppSearchBar extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: height / 40),
       child: TextField(
+        autofocus: false,
         // enabled: true,
         //readOnly: true,
         style: TextStyle(

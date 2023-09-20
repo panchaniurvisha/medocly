@@ -109,6 +109,9 @@ class AppDentistDoctorList extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(
+                  height: height(context) / 90,
+                ),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(

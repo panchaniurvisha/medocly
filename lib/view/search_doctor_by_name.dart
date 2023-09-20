@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:medocly/res/common/app_dentist_doctor_list.dart';
 import 'package:medocly/res/common/media_query.dart';
 import 'package:medocly/res/constant/app_colors.dart';
@@ -14,7 +15,7 @@ class SearchDoctorByName extends StatefulWidget {
 
 class _SearchDoctorByNameState extends State<SearchDoctorByName> {
   int selectedIndex = 0;
-  bool autoFocus = true;
+  bool autoFocus = false;
   FocusNode focusNode = FocusNode();
   final List<String> data = ["All", "General", "Dentist", "Nutritionist"];
   final TextEditingController nameController = TextEditingController();
@@ -51,15 +52,21 @@ class _SearchDoctorByNameState extends State<SearchDoctorByName> {
           decoration: InputDecoration(
               contentPadding: EdgeInsets.only(
                 top: height(context) / 60,
+                left: 8,
               ),
-              suffixIcon: Image.asset(
-                AppImages.filter,
-                height: height(context) / 62.5,
-                width: width(context) / 18,
+              suffixIcon: Padding(
+                padding: EdgeInsets.only(
+                    right: width(context) / 25, left: width(context) / 25),
+                child: Image.asset(
+                  AppImages.filter,
+                  height: height(context) / 62.5,
+                  width: width(context) / 18,
+                ),
               ),
-              prefixIcon: Icon(Icons.search,
-                  color:
-                      autoFocus ? AppColors.skuBlue : AppColors.hintTextColor),
+              prefixIcon: Icon(
+                Icons.search,
+                color: autoFocus ? AppColors.skuBlue : AppColors.hintTextColor,
+              ),
               counter: Container(),
               enabledBorder: OutlineInputBorder(
                 borderSide:
@@ -69,8 +76,7 @@ class _SearchDoctorByNameState extends State<SearchDoctorByName> {
                 ),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide:
-                    const BorderSide(width: 2, color: AppColors.skuBlue),
+                borderSide: const BorderSide(color: AppColors.skuBlue),
                 borderRadius: BorderRadius.all(
                   Radius.circular(width(context) / 30),
                 ),
@@ -122,7 +128,7 @@ class _SearchDoctorByNameState extends State<SearchDoctorByName> {
                       ),
                       child: Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical: height(context) / 100,
+                            vertical: height(context) / 80,
                             horizontal: width(context) / 20),
                         child: Text(
                           data[index],
@@ -148,7 +154,11 @@ class _SearchDoctorByNameState extends State<SearchDoctorByName> {
   Widget? buildSelectedWidget() {
     switch (selectedIndex) {
       case 0:
-        return const CircularProgressIndicator();
+        return Padding(
+          padding: EdgeInsets.symmetric(vertical: height(context) / 5),
+          child: SpinKitCircle(
+              color: AppColors.skuBlue, size: height(context) / 10),
+        );
       case 1:
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
