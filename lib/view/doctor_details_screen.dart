@@ -30,9 +30,12 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                 color: Colors.white, fontWeight: FontWeight.w700, fontSize: 18),
           ),
           actions: [
-            Image.asset(
-              AppImages.heart,
-              height: height(context) / 30,
+            Padding(
+              padding: EdgeInsets.only(right: width(context) / 20),
+              child: Image.asset(
+                AppImages.heart,
+                height: height(context) / 30,
+              ),
             ),
           ],
         ),
@@ -183,9 +186,12 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                     Image.asset(AppImages.circle, height: height(context) / 30),
                   ],
                 ),
-                const Text(AppString.otherPersonReview,
-                    style:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w400)),
+                Padding(
+                  padding: EdgeInsets.only(top: height(context) / 80),
+                  child: const Text(AppString.otherPersonReview,
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w400)),
+                ),
                 const Align(
                   alignment: Alignment.center,
                   child: Text(AppString.feesAmount,
