@@ -40,4 +40,44 @@ class AppString {
   static const String fourSixNineFound = "469 founds";
   static const String text =
       "Sorry, the keyword you entered cannot be \n found, please check again or search with \n another keyword.";
+
+  ///doctor Details Screen
+  static const String drJennyWatson = "Dr. Jenny Watson";
+  static const String immunologists = "Immunologists";
+  static const String placeHospital = "Christ Hospital in London, UK";
+  static const String fiveThousand = "5,000+";
+  static const String tenPlus = "10+";
+  static const String rate = "4.8";
+  static const String reviewValue = "4,942";
+  static const String reviews = "Reviews";
+  static const String rating = "Rating";
+  static const String yearsExperience = "Years Experience";
+  static const String patients = "Patients";
+  static const String aboutMe = "About me";
+  static const String doctorInformation =
+      "Dr. Jenny Watson is the top most Immunologists specialist in Christ Hospital at London. She achived several awards for her wonderful contribution in medical field. She is available for private consultation.";
+  static const String viewMore = "view more";
+  static const String workingTime = "Working Time";
+  static const String time = "Monday - Friday, 08.00 AM - 20.00 PM";
+  static const String charoletteHanlin = "Charolette Hanlin";
+  static const String otherPersonReview =
+      "Dr. Jenny is very professional in her work and responsive. I have consulted and my problem is solved. 😍😍";
+  static const String feesAmount = "Consultation Fees - Rs 200";
+  static const String five = "5";
+  static const String bookAppointment = "Book Appointment";
+
+  ///rating And Review Screen
+  static const String titleOfAppbar = "4.8(4852 Reviews)";
+  static const String otherPersonReviewTwo =
+      "The doctor is very beautiful and the service is excellent! I like it and want to consult again 🤣🤣";
+  static const String otherPersonReviewThree =
+      "Doctors who are very skilled and fast in service. I highly recommend Dr. Jenny for all who want to consult 👍👍";
+  static const String otherPersonReviewFour =
+      "Doctors who are very skilled and fast in service. My illness is cured, thank you very much! 😊";
+  static const String otherPersonReviewFive =
+      "Dr. Jenny is very professional in her work and responsive. I have consulted and my problem is solved. 🔥🔥";
+  static const String darronkulikowski = "Darron Kulikowski";
+  static const String lauraleeQuintero = "Lauralee Quintero";
+  static const String aileenFullbright = "Aileen Fullbright";
+  static const String rodolfoGoode = "Rodolfo Goode";
 }

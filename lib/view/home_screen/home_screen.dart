@@ -10,6 +10,8 @@ import 'package:medocly/res/constant/app_images.dart';
 import 'package:medocly/res/constant/app_string.dart';
 import 'package:medocly/utils/routes/routes_name.dart';
 
+import '../../res/common/app_review_button.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -121,11 +123,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: height(context) / 90),
-                child: Text(
+                child: const Text(
                   AppString.medClyService,
                   style: TextStyle(
                       color: AppColors.black,
-                      fontSize: height(context) / 40,
+                      fontSize: 20,
                       fontWeight: FontWeight.w700),
                 ),
               ),
@@ -135,14 +137,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   AppExpandedColumn(
                     image: AppImages.steThoSKop,
                     text: AppString.findDoctors,
+                    showTitle: false,
                   ),
                   AppExpandedColumn(
                     image: AppImages.hospitals,
                     text: AppString.findHospitals,
+                    showTitle: false,
                   ),
                   AppExpandedColumn(
                     image: AppImages.homeNursing,
                     text: AppString.homeNursing,
+                    showTitle: false,
                   ),
                 ],
               ),
@@ -151,19 +156,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       AppString.topCategories,
                       style: TextStyle(
                           color: AppColors.black,
-                          fontSize: height(context) / 40,
+                          fontSize: 20,
                           fontWeight: FontWeight.w700),
                     ),
                     InkWell(
-                      child: Text(
+                      child: const Text(
                         AppString.seeAll,
                         style: TextStyle(
                             color: AppColors.skuBlue,
-                            fontSize: height(context) / 50,
+                            fontSize: 16,
                             fontWeight: FontWeight.w700),
                       ),
                       onTap: () => Navigator.pushNamed(
@@ -180,18 +185,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     AppExpandedColumn(
                       image: AppImages.user,
                       text: AppString.general,
+                      showTitle: false,
                     ),
                     AppExpandedColumn(
                       image: AppImages.dentist,
                       text: AppString.dentist,
+                      showTitle: false,
                     ),
                     AppExpandedColumn(
                       image: AppImages.ophThaL,
                       text: AppString.ophthalmic,
+                      showTitle: false,
                     ),
                     AppExpandedColumn(
                       image: AppImages.nutrition,
                       text: AppString.nutrition,
+                      showTitle: false,
                     ),
                   ],
                 ),
@@ -202,40 +211,44 @@ class _HomeScreenState extends State<HomeScreen> {
                   const AppExpandedColumn(
                     image: AppImages.neurologist,
                     text: AppString.neUroLo,
+                    showTitle: false,
                   ),
                   const AppExpandedColumn(
                     image: AppImages.pediatric,
                     text: AppString.pediatric,
+                    showTitle: false,
                   ),
                   const AppExpandedColumn(
                     image: AppImages.radioLogistic,
                     text: AppString.raDioLo,
+                    showTitle: false,
                   ),
                   AppExpandedColumn(
                     image: AppImages.moreCircle,
                     onTap: () => Navigator.pushNamed(
                         context, RoutesName.findDoctorScreen),
                     text: AppString.more,
+                    showTitle: false,
                   ),
                 ],
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: height(context) / 30),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       AppString.topDoctors,
                       style: TextStyle(
                           color: AppColors.black,
-                          fontSize: height(context) / 40,
+                          fontSize: 20,
                           fontWeight: FontWeight.w700),
                     ),
                     Text(
                       AppString.seeAll,
                       style: TextStyle(
                           color: AppColors.skuBlue,
-                          fontSize: height(context) / 50,
+                          fontSize: 16,
                           fontWeight: FontWeight.w700),
                     ),
                   ],
@@ -250,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: data.length,
                   physics: const AlwaysScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
-                    final isSelected = index == selectedIndex;
+                    final isSelect = index == selectedIndex;
                     return InkWell(
                       splashColor: Colors.transparent,
                       onTap: () {
@@ -260,31 +273,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         );
                       },
-                      child: Container(
-                        margin: EdgeInsets.only(right: width(context) / 30),
-                        decoration: BoxDecoration(
-                          color: isSelected ? AppColors.skuBlue : Colors.white,
-                          border: Border.all(
-                            width: 2,
-                            color: AppColors.skuBlue,
-                          ),
-                          borderRadius:
-                              BorderRadius.circular(width(context) / 15),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: height(context) / 100,
-                              horizontal: width(context) / 20),
-                          child: Text(
-                            data[index],
-                            style: TextStyle(
-                                color: isSelected
-                                    ? Colors.white
-                                    : AppColors.skuBlue,
-                                fontWeight: FontWeight.w600,
-                                fontSize: height(context) / 55),
-                          ),
-                        ),
+                      child: AppReviewButton(
+                        showIconAndSizedBox: false,
+                        isSelected: true,
+                        text: data[index],
+                        containerColor:
+                            isSelect ? AppColors.skuBlue : Colors.white,
+                        textColor: isSelect ? Colors.white : AppColors.skuBlue,
                       ),
                     );
                   },

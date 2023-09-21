@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medocly/res/constant/app_colors.dart';
 import 'package:medocly/utils/routes/routes_name.dart';
 
 import 'utils/routes/app_routes.dart';
@@ -16,12 +17,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.skuBlue),
           useMaterial3: true,
           fontFamily: "Urbanist",
         ),
         debugShowCheckedModeBanner: false,
-        //home: const BottomScreen(),
         routes: appRoutes,
         initialRoute: RoutesName.bottomScreen);
   }

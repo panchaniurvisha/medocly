@@ -27,4 +27,19 @@ class AppImages {
   static const String shieldDone = "${iconBasePath}shield_done.png";
   static const String document = "${iconBasePath}Document.png";
   static const String filter = "${iconBasePath}Filter.png";
+
+  ///Doctor Details Screen icons------->
+  static const String user3 = "${iconBasePath}user_3.png";
+  static const String messenger = "${iconBasePath}messenger.png";
+  static const String chatIcon = "${iconBasePath}chat_icon.png";
+  static const String circle = "${iconBasePath}more_circle.png";
+
+  ///Doctor Details Screen images------->
+  static const String reviewPerson = "${basePath}Ellipse_person.png";
+
+  ///Rating Review Screen Images-------->
+  static const String personTwo = "${basePath}person_two.png";
+  static const String personThree = "${basePath}person_three.png";
+  static const String personFour = "${basePath}person_four.png";
+  static const String personFive = "${basePath}person_five.png";
 }

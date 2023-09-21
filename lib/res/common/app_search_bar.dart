@@ -17,17 +17,16 @@ class AppSearchBar extends StatelessWidget {
         autofocus: false,
         // enabled: true,
         //readOnly: true,
-        style: TextStyle(
+        style: const TextStyle(
           color: AppColors.black,
           fontWeight: FontWeight.w400,
-          fontSize: height / 42,
-          fontFamily: "Poppins",
+          fontSize: 14,
           fontStyle: FontStyle.normal,
         ),
         cursorColor: AppColors.black,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: height / 60),
-            prefixIcon: Icon(Icons.search_rounded, color: AppColors.grey),
+            prefixIcon: const Icon(Icons.search_rounded, color: AppColors.grey),
             counter: Container(),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(width: width / 40, color: AppColors.white),
@@ -43,9 +42,9 @@ class AppSearchBar extends StatelessWidget {
               ),
             ),
             hintText: AppString.search,
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
                 // fontFamily: AppString.appFontFamily,
-                fontSize: height / 50,
+                fontSize: 14,
                 fontWeight: FontWeight.w400,
                 color: AppColors.grey),
             filled: true,

@@ -65,13 +65,13 @@ class _BottomScreenState extends State<BottomScreen> {
             });
           },
           selectedItemColor: AppColors.skuBlue,
-          selectedLabelStyle: TextStyle(
+          selectedLabelStyle: const TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: height / 80,
+            fontSize: 10,
           ),
-          unselectedLabelStyle: TextStyle(
+          unselectedLabelStyle: const TextStyle(
             fontWeight: FontWeight.w500,
-            fontSize: height / 80,
+            fontSize: 10,
           ),
           unselectedItemColor: AppColors.unActiveIconColor,
           showUnselectedLabels: true,

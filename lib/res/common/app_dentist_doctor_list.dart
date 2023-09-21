@@ -3,6 +3,7 @@ import 'package:medocly/res/common/media_query.dart';
 import 'package:medocly/res/constant/app_colors.dart';
 import 'package:medocly/res/constant/app_images.dart';
 import 'package:medocly/res/constant/app_string.dart';
+import 'package:medocly/utils/routes/routes_name.dart';
 
 class AppDentistDoctorList extends StatelessWidget {
   const AppDentistDoctorList({super.key});
@@ -18,35 +19,35 @@ class AppDentistDoctorList extends StatelessWidget {
             children: [
               Image.asset(AppImages.mohanSharma, height: height(context) / 8),
               SizedBox(height: height(context) / 60),
-              Text(
+              const Text(
                 AppString.consulTation,
                 style: TextStyle(
                     color: AppColors.lightBlack,
                     fontWeight: FontWeight.w500,
-                    fontSize: height(context) / 60),
+                    fontSize: 12),
               ),
-              Text(
+              const Text(
                 AppString.rs500,
                 style: TextStyle(
                     color: AppColors.black,
                     fontWeight: FontWeight.w700,
-                    fontSize: height(context) / 60),
+                    fontSize: 14),
               )
             ],
           ),
           Padding(
-            padding: EdgeInsets.only(left: width(context) / 60),
+            padding: EdgeInsets.only(left: width(context) / 40),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       AppString.drMohanSharma,
                       style: TextStyle(
                           height: 3,
                           color: AppColors.black,
-                          fontSize: height(context) / 45,
+                          fontSize: 18,
                           fontWeight: FontWeight.w700),
                     ),
                     SizedBox(
@@ -59,12 +60,12 @@ class AppDentistDoctorList extends StatelessWidget {
                     ),
                   ],
                 ),
-                Text(
+                const Text(
                   AppString.cardiologists,
                   style: TextStyle(
                       height: 2,
                       color: AppColors.lightBlack,
-                      fontSize: height(context) / 60,
+                      fontSize: 12,
                       fontWeight: FontWeight.w500),
                 ),
                 Row(
@@ -74,12 +75,12 @@ class AppDentistDoctorList extends StatelessWidget {
                       height: height(context) / 50,
                     ),
                     SizedBox(width: width(context) / 60),
-                    Text(
+                    const Text(
                       AppString.fourPointEight,
                       style: TextStyle(
                           height: 2,
                           color: AppColors.lightBlack,
-                          fontSize: height(context) / 60,
+                          fontSize: 12,
                           fontWeight: FontWeight.w500),
                     ),
                   ],
@@ -89,22 +90,22 @@ class AppDentistDoctorList extends StatelessWidget {
                     Image.asset(AppImages.ticketStar,
                         height: height(context) / 50),
                     SizedBox(width: width(context) / 60),
-                    Text(
+                    const Text(
                       AppString.year,
                       style: TextStyle(
                           color: AppColors.lightBlack,
-                          fontSize: height(context) / 60,
+                          fontSize: 12,
                           fontWeight: FontWeight.w500),
                     ),
                     SizedBox(width: width(context) / 40),
                     Image.asset(AppImages.shieldDone,
                         height: height(context) / 50),
                     SizedBox(width: width(context) / 60),
-                    Text(
+                    const Text(
                       AppString.language,
                       style: TextStyle(
                           color: AppColors.lightBlack,
-                          fontSize: height(context) / 60,
+                          fontSize: 12,
                           fontWeight: FontWeight.w500),
                     ),
                   ],
@@ -113,7 +114,8 @@ class AppDentistDoctorList extends StatelessWidget {
                   height: height(context) / 90,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushNamed(
+                      context, RoutesName.doctorDetailsScreen),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.skuBlue,
                     fixedSize: Size(width(context) / 1.7, height(context) / 20),
@@ -121,11 +123,11 @@ class AppDentistDoctorList extends StatelessWidget {
                         borderRadius:
                             BorderRadius.circular(width(context) / 10)),
                   ),
-                  child: Text(
+                  child: const Text(
                     AppString.bookVisit,
                     style: TextStyle(
                         color: AppColors.white,
-                        fontSize: height(context) / 55,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600),
                   ),
                 )

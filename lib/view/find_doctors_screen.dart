@@ -57,12 +57,13 @@ class _FindDoctorsScreenState extends State<FindDoctorsScreen> {
         leading: const BackButton(
           color: Colors.white,
         ),
-        title: Text(
+        title: const Text(
           AppString.titleOfAppBar,
           style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: height(context) / 40),
+            color: Colors.white,
+            fontWeight: FontWeight.w700,
+            fontSize: 18,
+          ),
         ),
       ),
       body: ListView.builder(
@@ -77,7 +78,11 @@ class _FindDoctorsScreenState extends State<FindDoctorsScreen> {
             final item = data[index];
             return Row(
               children: [
-                AppExpandedColumn(image: item["image"], text: item["text"]),
+                AppExpandedColumn(
+                  image: item["image"],
+                  text: item["text"],
+                  showTitle: false,
+                ),
               ],
             );
           },

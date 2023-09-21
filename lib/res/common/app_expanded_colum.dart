@@ -8,7 +8,19 @@ class AppExpandedColumn extends StatelessWidget {
   final String? image;
   final void Function()? onTap;
   final String? text;
-  const AppExpandedColumn({super.key, this.image, this.text, this.onTap});
+  final String? title;
+  final Color? color;
+  final bool showTitle;
+
+  const AppExpandedColumn({
+    super.key,
+    this.image,
+    this.text,
+    this.onTap,
+    this.title,
+    this.color,
+    this.showTitle = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +37,18 @@ class AppExpandedColumn extends StatelessWidget {
           Text(
             text!,
             style: TextStyle(
-                color: AppColors.lightBlack,
-                fontSize: height(context) / 55,
+                color: color ?? AppColors.lightBlack,
+                fontSize: 16,
                 fontWeight: FontWeight.w700),
           ),
+          if (showTitle)
+            Text(
+              title!,
+              style: const TextStyle(
+                  color: AppColors.lightBlack,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500),
+            ),
         ],
       ),
     );

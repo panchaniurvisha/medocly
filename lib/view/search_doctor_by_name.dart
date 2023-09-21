@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:medocly/res/common/app_dentist_doctor_list.dart';
+import 'package:medocly/res/common/app_review_button.dart';
 import 'package:medocly/res/common/media_query.dart';
 import 'package:medocly/res/constant/app_colors.dart';
 import 'package:medocly/res/constant/app_images.dart';
@@ -82,9 +83,9 @@ class _SearchDoctorByNameState extends State<SearchDoctorByName> {
                 ),
               ),
               hintText: AppString.hintOfSearch,
-              hintStyle: TextStyle(
+              hintStyle: const TextStyle(
                   fontWeight: FontWeight.w600,
-                  fontSize: height(context) / 60,
+                  fontSize: 14,
                   color: AppColors.hintTextColor),
               filled: true,
               fillColor: AppColors.white),
@@ -105,7 +106,7 @@ class _SearchDoctorByNameState extends State<SearchDoctorByName> {
                 itemCount: data.length,
                 physics: const AlwaysScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  final isSelected = index == selectedIndex;
+                  final isSelect = index == selectedIndex;
                   return InkWell(
                     splashColor: Colors.transparent,
                     onTap: () {
@@ -115,30 +116,13 @@ class _SearchDoctorByNameState extends State<SearchDoctorByName> {
                         },
                       );
                     },
-                    child: Container(
-                      margin: EdgeInsets.only(right: height(context) / 60),
-                      decoration: BoxDecoration(
-                        color: isSelected ? AppColors.skuBlue : Colors.white,
-                        border: Border.all(
-                          width: 2,
-                          color: AppColors.skuBlue,
-                        ),
-                        borderRadius:
-                            BorderRadius.circular(width(context) / 15),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: height(context) / 80,
-                            horizontal: width(context) / 20),
-                        child: Text(
-                          data[index],
-                          style: TextStyle(
-                              color:
-                                  isSelected ? Colors.white : AppColors.skuBlue,
-                              fontWeight: FontWeight.w600,
-                              fontSize: height(context) / 55),
-                        ),
-                      ),
+                    child: AppReviewButton(
+                      showIconAndSizedBox: false,
+                      isSelected: true,
+                      text: data[index],
+                      containerColor:
+                          isSelect ? AppColors.skuBlue : Colors.white,
+                      textColor: isSelect ? Colors.white : AppColors.skuBlue,
                     ),
                   );
                 },
@@ -163,32 +147,32 @@ class _SearchDoctorByNameState extends State<SearchDoctorByName> {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               AppString.zeroFound,
               style: TextStyle(
-                fontSize: height(context) / 40,
+                fontSize: 20,
                 fontWeight: FontWeight.w700,
                 color: AppColors.black,
               ),
             ),
             Padding(
               padding: EdgeInsets.only(top: height(context) / 8),
-              child: Align(
+              child: const Align(
                 alignment: Alignment.center,
                 child: Text(
                   AppString.notFound,
                   style: TextStyle(
-                    fontSize: height(context) / 30,
+                    fontSize: 24,
                     fontWeight: FontWeight.w700,
                     color: AppColors.black,
                   ),
                 ),
               ),
             ),
-            Text(
+            const Text(
               AppString.text,
               style: TextStyle(
-                fontSize: height(context) / 45,
+                fontSize: 18,
                 fontWeight: FontWeight.w400,
                 color: AppColors.black,
               ),
@@ -204,10 +188,10 @@ class _SearchDoctorByNameState extends State<SearchDoctorByName> {
                 index == 0
                     ? Padding(
                         padding: EdgeInsets.only(top: height(context) / 60),
-                        child: Text(
+                        child: const Text(
                           AppString.fourSixNineFound,
                           style: TextStyle(
-                            fontSize: height(context) / 40,
+                            fontSize: 20,
                             fontWeight: FontWeight.w700,
                             color: AppColors.black,
                           ),
