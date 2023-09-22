@@ -79,35 +79,29 @@ class _ReviewSummeryScreenState extends State<ReviewSummeryScreen> {
             ),
             SizedBox(height: height(context) / 20),
             const AppRow(
-              index: 0,
               text: AppString.dateAndHour,
               time: AppString.eventTime,
             ),
             const AppRow(
-              index: 1,
               text: AppString.clinicName,
               time: AppString.nameOfClinic,
             ),
             const AppRow(
-              index: 2,
               text: AppString.address,
               time: AppString.addressOfJaipur,
             ),
-            const AppRow(index: 3, time: AppString.rajsthan),
+            const AppRow(height: 0, time: AppString.rajsthan),
             SizedBox(height: height(context) / 20),
             const AppRow(
-              index: 4,
               text: AppString.bookingAmount,
               time: AppString.rs200,
             ),
             const AppRow(
-              index: 5,
               text: AppString.convenienceCharges,
               time: AppString.rs5,
             ),
             SizedBox(height: height(context) / 40),
             const AppRow(
-              index: 6,
               text: AppString.total,
               time: AppString.rs205,
             ),
