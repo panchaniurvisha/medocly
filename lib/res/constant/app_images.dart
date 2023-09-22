@@ -42,4 +42,7 @@ class AppImages {
   static const String personThree = "${basePath}person_three.png";
   static const String personFour = "${basePath}person_four.png";
   static const String personFive = "${basePath}person_five.png";
+
+  /// Review Summery Screen Images-------->
+  static const String drJennyWaston = "${basePath}dr_jenny_watson.png";
 }

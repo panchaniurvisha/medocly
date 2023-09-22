@@ -4,4 +4,6 @@ class RoutesName {
   static String searchDoctorByName = "/SearchDoctorByName";
   static String doctorDetailsScreen = "/DoctorDetailsScreen";
   static String ratingReviewScreen = "/RatingReviewScreen";
+  static String patientDetailsScreen = "/PatientDetailsScreen";
+  static String reviewSummeryScreen = "/ReviewSummeryScreen";
 }

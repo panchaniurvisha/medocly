@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medocly/res/common/app_elevated_button.dart';
 import 'package:medocly/res/common/app_expanded_colum.dart';
 import 'package:medocly/res/common/app_review_button.dart';
 import 'package:medocly/res/constant/app_string.dart';
@@ -53,34 +54,42 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                     Image.asset(AppImages.mohanSharma,
                         height: height(context) / 8),
                     SizedBox(width: width(context) / 40),
-                    const Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          AppString.drMohanSharma,
-                          style: TextStyle(
-                              height: 3,
-                              color: AppColors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        Text(
-                          AppString.immunologists,
-                          style: TextStyle(
-                              height: 2,
-                              color: AppColors.lightBlack,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500),
-                        ),
-                        Text(
-                          AppString.placeHospital,
-                          style: TextStyle(
-                              height: 2,
-                              color: AppColors.lightBlack,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ],
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            AppString.drMohanSharma,
+                            style: TextStyle(
+                                color: AppColors.black,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700),
+                          ),
+                          SizedBox(
+                            height: height(context) / 40,
+                            child: const Divider(
+                              color: AppColors.dividerColor,
+                              height: 0,
+                              thickness: 1,
+                            ),
+                          ),
+                          const Text(
+                            AppString.immunologists,
+                            style: TextStyle(
+                                height: 2,
+                                color: AppColors.lightBlack,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500),
+                          ),
+                          const Text(
+                            AppString.placeHospital,
+                            style: TextStyle(
+                                color: AppColors.lightBlack,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -200,23 +209,9 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                           fontSize: 20,
                           fontWeight: FontWeight.w700)),
                 ),
-                Center(
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(AppColors.skuBlue),
-                        minimumSize: MaterialStateProperty.all(
-                            Size(width(context) / 1.2, height(context) / 16))),
-                    child: const Text(
-                      AppString.bookAppointment,
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white),
-                    ),
-                  ),
-                ),
+                const AppElevatedButton(
+                  text: AppString.bookAppointment,
+                )
               ],
             ),
           ),

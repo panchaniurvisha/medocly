@@ -60,10 +60,14 @@ class AppDentistDoctorList extends StatelessWidget {
                     ),
                   ],
                 ),
+                const Divider(
+                  color: AppColors.black,
+                  height: 0,
+                  thickness: 1,
+                ),
                 const Text(
                   AppString.cardiologists,
                   style: TextStyle(
-                      height: 2,
                       color: AppColors.lightBlack,
                       fontSize: 12,
                       fontWeight: FontWeight.w500),

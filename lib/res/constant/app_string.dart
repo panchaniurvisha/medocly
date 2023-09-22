@@ -80,4 +80,47 @@ class AppString {
   static const String lauraleeQuintero = "Lauralee Quintero";
   static const String aileenFullbright = "Aileen Fullbright";
   static const String rodolfoGoode = "Rodolfo Goode";
+
+  ///Patient Details Screen
+  static const String patientDetails = "Patient Details";
+  static const String fullName = "Full Name";
+  static const String phoneNumber = "Phone Number";
+  static const String gender = "Gender";
+  static const String yourAge = "Your Age";
+  static const String writeYourProblem = "Write Your Problem";
+  static const String andrewAinsley = "Andrew Ainsley";
+  static const String hintPhoneNumber = "+91-1231231231";
+  static const String hintProblem = "Please add any notes for the doctor here";
+  static const String next = "Next";
+
+  static const String twentyOne = '21 years';
+  static const String twentyTwo = '22 years';
+  static const String twentyThree = '23 years';
+  static const String twentyFour = '24 years';
+  static const String twentyFive = '25 years';
+  static const String twentySix = '26 years';
+  static const String twentySeven = '27 years';
+  static const String twentyEight = '28 years';
+  static const String twentyNine = '29 years';
+  static const String thirty = '30 years';
+  static const String genderText = 'Gender';
+  static const String male = 'Male';
+  static const String female = 'Female';
+  static const String others = 'Others';
+
+  ///Review Summery Screen
+  static const String reviewSummery = 'Review Summary';
+  static const String dateAndHour = 'Date & Hour';
+  static const String clinicName = 'Clinic Name';
+  static const String address = 'Address';
+  static const String bookingAmount = 'Booking Amount';
+  static const String convenienceCharges = 'Convenience Charges';
+  static const String total = 'Total';
+  static const String eventTime = 'Dec 23, 2024 | 10:00 AM';
+  static const String nameOfClinic = 'Dr Watson Clinical Insttitute';
+  static const String rs200 = 'Rs 200.00';
+  static const String rs205 = 'Rs 205.00';
+  static const String rs5 = 'Rs 5.00';
+  static const String addressOfJaipur = 'RN 123, Near Shikarpura, Jaipur,';
+  static const String rajsthan = 'Rajasthan(302013)';
 }
