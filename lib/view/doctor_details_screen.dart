@@ -199,7 +199,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                   padding: EdgeInsets.only(top: height(context) / 80),
                   child: const Text(AppString.otherPersonReview,
                       style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w400)),
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.w400)),
                 ),
                 const Align(
                   alignment: Alignment.center,
@@ -209,8 +209,10 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                           fontSize: 20,
                           fontWeight: FontWeight.w700)),
                 ),
-                const AppElevatedButton(
+                AppElevatedButton(
                   text: AppString.bookAppointment,
+                  onPressed: () => Navigator.pushNamed(
+                      context, RoutesName.bookAppointmentScreen),
                 )
               ],
             ),

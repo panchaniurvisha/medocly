@@ -6,6 +6,7 @@ import 'package:medocly/view/find_doctors_screen.dart';
 import 'package:medocly/view/review_summery_screen.dart';
 import 'package:medocly/view/search_doctor_by_name.dart';
 
+import '../../view/book_appointment_screen.dart';
 import '../../view/patient_detaild_screen.dart';
 import '../../view/rating_review_screen.dart';
 
@@ -17,4 +18,5 @@ Map<String, WidgetBuilder> appRoutes = {
   RoutesName.ratingReviewScreen: (context) => const RatingReviewScreen(),
   RoutesName.patientDetailsScreen: (context) => const PatientDetailsScreen(),
   RoutesName.reviewSummeryScreen: (context) => const ReviewSummeryScreen(),
+  RoutesName.bookAppointmentScreen: (context) => const BookAppointmentScreen(),
 };

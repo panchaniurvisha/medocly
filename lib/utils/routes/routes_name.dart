@@ -6,4 +6,5 @@ class RoutesName {
   static String ratingReviewScreen = "/RatingReviewScreen";
   static String patientDetailsScreen = "/PatientDetailsScreen";
   static String reviewSummeryScreen = "/ReviewSummeryScreen";
+  static String bookAppointmentScreen = "/BookAppointmentScreen";
 }

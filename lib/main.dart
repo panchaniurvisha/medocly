@@ -23,6 +23,6 @@ class MyApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         routes: appRoutes,
-        initialRoute: RoutesName.patientDetailsScreen);
+        initialRoute: RoutesName.bottomScreen);
   }
 }

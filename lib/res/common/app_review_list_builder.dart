@@ -53,7 +53,7 @@ class AppReviewListViewBuilder extends StatelessWidget {
             ),
             child: Text(review!,
                 style:
-                    const TextStyle(fontSize: 14, fontWeight: FontWeight.w400)),
+                    const TextStyle(fontSize: 12, fontWeight: FontWeight.w400)),
           ),
         ],
       ),

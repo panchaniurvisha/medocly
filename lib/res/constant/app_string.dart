@@ -123,4 +123,9 @@ class AppString {
   static const String rs5 = 'Rs 5.00';
   static const String addressOfJaipur = 'RN 123, Near Shikarpura, Jaipur,';
   static const String rajsthan = 'Rajasthan(302013)';
+
+  ///Book Appointment Screen
+  static const String appBarTitle = 'Book Appointment';
+  static const String selectDate = 'Select Date';
+  static const String selectHour = 'Select Hour';
 }
