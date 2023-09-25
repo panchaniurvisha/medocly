@@ -13,4 +13,6 @@ class AppColors {
   static const Color textFieldFilledColor = Color(0xffFAFAFA);
   static const Color dividerColor = Color(0xffEEEEEE);
   static const Color grey700 = Color(0xff616161);
+  static const Color orange = Color(0xffF75555);
+  static const Color labelTextColor = Color(0xffACACAC);
 }

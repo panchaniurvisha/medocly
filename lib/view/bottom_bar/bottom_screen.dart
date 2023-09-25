@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medocly/res/constant/app_string.dart';
 import 'package:medocly/view/appointment_screen.dart';
 import 'package:medocly/view/home_screen/home_screen.dart';
-import 'package:medocly/view/profile_screen.dart';
+import 'package:medocly/view/profile/profile_screen.dart';
 import 'package:medocly/view/specialities_screen.dart';
 
 import '../../res/constant/app_colors.dart';

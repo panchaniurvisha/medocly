@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medocly/res/common/app_textfield.dart';
 import 'package:medocly/res/common/media_query.dart';
 
+import '../res/common/app_dropDownButton.dart';
 import '../res/common/app_elevated_button.dart';
 import '../res/constant/app_colors.dart';
 import '../res/constant/app_string.dart';
@@ -123,81 +124,40 @@ class _PatientDetailsScreenState extends State<PatientDetailsScreen> {
               AppString.gender,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
             ),
-            Container(
-              width: width(context) / 1,
-              padding: EdgeInsets.only(
-                left: width(context) / 18,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(width(context) / 22.5),
-                border:
-                    Border.all(color: Colors.white, width: 2), // Border color
-              ),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton(
-                  isExpanded: false,
-                  value: selectedValue,
-                  style: const TextStyle(
-                    color: AppColors.black,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  iconSize: height(context) / 25,
-                  items: dropDownListItemGender
-                      .map(
-                        (value) => DropdownMenuItem(
-                          value: value['value'],
-                          child: Text(value['data']),
-                        ),
-                      )
-                      .toList(),
-                  onChanged: (value) {
-                    setState(() {
-                      selectedValue = value.toString();
-                    });
-                  },
-                ),
-              ),
-            ),
+            AppDropDownButton(
+                value: selectedValue,
+                items: dropDownListItemGender
+                    .map(
+                      (value) => DropdownMenuItem(
+                        value: value['value'],
+                        child: Text(value['data']),
+                      ),
+                    )
+                    .toList(),
+                onChanged: (value) {
+                  setState(() {
+                    selectedValue = value.toString();
+                  });
+                }),
             const Text(
               AppString.yourAge,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
             ),
-            Container(
-              width: width(context) / 1,
-              padding: EdgeInsets.only(
-                left: width(context) / 18,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(width(context) / 22.5),
-                border:
-                    Border.all(color: Colors.white, width: 2), // Border color
-              ),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton(
-                  value: chooseValue,
-                  style: const TextStyle(
-                    color: AppColors.black,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  iconSize: height(context) / 25,
-                  items: dropDownListItem
-                      .map(
-                        (value) => DropdownMenuItem(
-                          value: value['value'],
-                          child: Text(value['data']),
-                        ),
-                      )
-                      .toList(),
-                  onChanged: (value) {
-                    setState(() {
-                      chooseValue = value.toString();
-                    });
-                  },
-                ),
-              ),
-            ),
+            AppDropDownButton(
+                value: chooseValue,
+                items: dropDownListItem
+                    .map(
+                      (value) => DropdownMenuItem(
+                        value: value['value'],
+                        child: Text(value['data']),
+                      ),
+                    )
+                    .toList(),
+                onChanged: (value) {
+                  setState(() {
+                    chooseValue = value.toString();
+                  });
+                }),
             const Text(
               AppString.writeYourProblem,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),

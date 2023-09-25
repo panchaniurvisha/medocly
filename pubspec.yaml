@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.1
   flutter_spinkit: ^5.2.0
+  image_picker: ^1.0.4
+  intl_phone_field: ^3.2.0
 
 dev_dependencies:
   flutter_test:

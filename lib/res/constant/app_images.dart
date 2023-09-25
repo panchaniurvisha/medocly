@@ -45,4 +45,22 @@ class AppImages {
 
   /// Review Summery Screen Images-------->
   static const String drJennyWaston = "${basePath}dr_jenny_watson.png";
+
+  ///Profile Screen Images------->
+  static const String profileImage = "${basePath}profile.png";
+
+  ///Edit Profile Screen Icon---->
+  static const String calenderIcon = "${iconBasePath}calender_icon.png";
+  static const String emailIcon = "${iconBasePath}email_icon.png";
+
+  ///Notification Screen Icon------>
+  static const String closeIcon = "${iconBasePath}close_icon.png";
+  static const String scheduleChangeIcon =
+      "${iconBasePath}schedule_change_icon.png";
+  static const String appointmentSuccessIcon =
+      "${iconBasePath}appointment_success_icon.png";
+  static const String setupSuccessIcon = "${iconBasePath}setupSuccess_icon.png";
+
+  ///NotificationHomeNursingCare Image Screen------>
+  static const String careAtHome = "${basePath}nursing_care_home.png";
 }

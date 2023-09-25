@@ -5,8 +5,11 @@ import 'media_query.dart';
 
 class AppElevatedButton extends StatelessWidget {
   final String? text;
+  final MaterialStateProperty<OutlinedBorder?>? shape;
   final void Function()? onPressed;
-  const AppElevatedButton({super.key, this.text, this.onPressed});
+  final MaterialStateProperty<Size?>? minimumSize;
+  const AppElevatedButton(
+      {super.key, this.text, this.onPressed, this.minimumSize, this.shape});
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +17,18 @@ class AppElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed ?? () {},
         style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(AppColors.skuBlue),
-            minimumSize: MaterialStateProperty.all(
-                Size(width(context) / 1.2, height(context) / 16))),
+          shape: shape ??
+              MaterialStateProperty.all(
+                RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(width(context) / 2),
+                ),
+              ),
+          backgroundColor: MaterialStateProperty.all(AppColors.skuBlue),
+          minimumSize: minimumSize ??
+              MaterialStateProperty.all(
+                Size(width(context) / 1.2, height(context) / 16),
+              ),
+        ),
         child: Text(
           text!,
           style: const TextStyle(

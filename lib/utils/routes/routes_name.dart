@@ -7,4 +7,9 @@ class RoutesName {
   static String patientDetailsScreen = "/PatientDetailsScreen";
   static String reviewSummeryScreen = "/ReviewSummeryScreen";
   static String bookAppointmentScreen = "/BookAppointmentScreen";
+  static String profileScreen = "/ProfileScreen";
+  static String profileAndSettingScreen = "/ProfileAndSettingScreen";
+  static String editProfileScreen = "/EditProfileScreen";
+  static String notificationScreen = "/NotificationScreen";
+  static String notificationHomeNursingCare = "/NotificationHomeNursingCare";
 }

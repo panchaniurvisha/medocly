@@ -128,4 +128,39 @@ class AppString {
   static const String appBarTitle = 'Book Appointment';
   static const String selectDate = 'Select Date';
   static const String selectHour = 'Select Hour';
+
+  ///Profile Screen
+  static const String createNewAccount = 'Create New Account';
+  static const String hintOfEmail = 'abhishek@brainboxapps.com';
+  static const String hintOfBirthDate = '12/27/1995';
+  static const String hintOfFullName = 'Andrew Ainsley';
+  static const String hintOfFirstName = 'Andrew';
+  static const String continueButton = 'Continue';
+
+  ///Profile And Setting Screen
+  static const String titleOfProfile = 'Profile';
+  static const String mobileNumber = '+1 111 467 378 399';
+
+  ///Edit Profile Screen----->
+  static const String editProfile = 'Edit Profile';
+  static const String updateButton = 'Update';
+
+  ///Notification Screen------>
+  static const String notifications = 'Notifications';
+  static const String cancelText =
+      'You have successfully canceled your appointment with Dr. Alan Watson on December 24, 2024, 13:00 p.m. 80% of the funds will be returned to your account.';
+  static const String changedText =
+      "You have successfully changed schedule an appointment with Dr. Alan Watson on December 24, 2024, 13:00 pm. Don't forget to activate your reminder.";
+  static const String appointmentSuccess =
+      "You have successfully booked an appointment with Dr. Alan Watson on December 24, 2024, 10:00 am. Don't forget to activate your reminder.";
+  static const String setUpSuccess =
+      "Your account creation is successful, you can now experience our services.";
+
+  ///NotificationHomeNursingCare Screen------>
+  static const String homeNursingCare = 'Home Nursing Care';
+  static const String bookNow = 'Book Now';
+  static const String titleOfBottomSheet =
+      'Please add your details and our team';
+  static const String subtitleOfBottomSheet = "will call you in short time";
+  static const String selectCity = "Select City (Servicing only in Jammu)";
 }
