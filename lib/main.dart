@@ -21,6 +21,6 @@ class MyApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         routes: appRoutes,
-        initialRoute: RoutesName.notificationHomeNursingCare);
+        initialRoute: RoutesName.bottomScreen);
   }
 }
